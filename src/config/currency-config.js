@@ -17,6 +17,7 @@ export const subUnitDivisors = {
   SEK: 100,
   SGD: 100,
   USD: 100,
+  BRL: 100,
 };
 
 // Currency formatting options.
@@ -33,20 +34,20 @@ export const currencyConfiguration = currency => {
 
   return subUnitDivisors[currency] === 1
     ? {
-        style: 'currency',
-        currency,
-        currencyDisplay: 'symbol',
-        useGrouping: true,
-        // If the currency is not using subunits (like JPY), remove fractions.
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-      }
+      style: 'currency',
+      currency,
+      currencyDisplay: 'symbol',
+      useGrouping: true,
+      // If the currency is not using subunits (like JPY), remove fractions.
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }
     : {
-        style: 'currency',
-        currency,
-        currencyDisplay: 'symbol',
-        useGrouping: true,
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      };
+      style: 'currency',
+      currency,
+      currencyDisplay: 'symbol',
+      useGrouping: true,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    };
 };
